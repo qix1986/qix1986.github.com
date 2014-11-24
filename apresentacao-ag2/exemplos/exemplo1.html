@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Animações CSS</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				font-size: 10px;
+				padding: 10em;
+			}
+
+			#elemento {
+				width: 10em;
+				height: 10em;
+				position: relative;
+				background: red;
+				opacity: 1;
+				transition: all .5s ease-out;
+				transform: translate(0);
+			}
+
+			#elemento.position {
+				transform: translate(200px, 0);
+			}
+
+			#elemento.color {
+				background: green;
+			}
+
+			#elemento.opacity {
+				opacity: .3;
+			}
+
+			.wrapper-butons {
+				margin: 3em 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="elemento"></div>
+		<div class="wrapper-butons">
+			<button id="botao-position">Posicao</button>
+			<button id="botao-color">Cor</button>
+			<button id="botao-opacity">Opacidade</button>
+		</div>
+		<script>
+			(function(doc, win, undefined){
+				var elemento      = doc.getElementById('elemento'),
+					botaoColor    = doc.getElementById('botao-color'),
+					botaoOpacity  = doc.getElementById('botao-opacity'),
+					botaoPosition = doc.getElementById('botao-position');
+
+				botaoColor.addEventListener('click', function(){
+					elemento.classList.toggle('color');
+				});
+
+				botaoOpacity.addEventListener('click', function(){
+					elemento.classList.toggle('opacity');
+				});
+
+				botaoPosition.addEventListener('click', function(){
+					elemento.classList.toggle('position');
+				});
+			})(document, window);
+		</script>
+	</body>
+</html>

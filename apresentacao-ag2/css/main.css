@@ -1,0 +1,102 @@
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body {
+    min-height: 740px;
+	font-family: 'Lato', sans-serif;
+	font-size: 10px;
+	color: rgb(0, 0, 0);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+	background: #CCC;
+	/*background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+	background:    -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+	background:     -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+	background:      -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+	background:         linear-gradient(90deg, #649173 10%, #DBD5A4 90%);*/
+}
+
+.step {
+	width: 1100px;
+	height: 730px;
+	background: rgba(255, 255, 255, .6);
+	text-align: center;
+	border-radius: 10px;
+	-webkit-transition-duration: 2s !important;
+		 -o-transition-duration: 2s !important;
+			transition-duration: 2s !important;
+	-webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, .45);
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, .45);
+}
+
+.step h1 {
+	font-size: 5em;
+}
+
+.step .ttl-code {
+	font-size: 2em;
+	text-align: left;
+	margin: .5em 0 .5em 1.5em;
+	padding-left: 40px;
+}
+
+.step pre {
+	text-align: left;
+	font-size: 1.3em;
+	position: relative;
+	top: -2em;
+}
+
+.step code {
+	background: rgba(255, 255, 255);
+	padding: 1em;
+}
+
+.step pre.double {
+	width: 50%;
+	float: left;
+}
+
+.step p {
+	font-size: 1.75em;
+	padding: 1em;
+}
+
+.step ul {
+	font-size: 1.7em;
+	text-align: left;
+	margin: 0 3em 1em;
+}
+
+.step ul li {
+	margin-bottom: .5em;
+}
+
+
+
+
+/*
+ * Clearfix: contain floats
+ */
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+	*zoom: 1;
+}
+

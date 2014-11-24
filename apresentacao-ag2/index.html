@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Animações CSS</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+		<link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css" rel="stylesheet" type='text/css'>
+		<link href='css/main.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div id="impress">
+			<section class="step" data-x="-2000" data-y="-3000">
+				<h1>Animações CSS</h1>
+				<pre>
+					<code>
+	&lt;script&gt;
+		var a = document.getElementById("elementId"),
+		    b = a.getBoundingClientRect();
+
+		console.log(b);
+	&lt;/script&gt;
+					</code>
+				</pre>
+			</section>
+			
+			<section class="step" data-x="0" data-y="-1000" data-rotate-x="150" data-rotate-z="100">
+				<h1>Origens</h1>
+				<p>Surgiu graças a crescente demanda por animações em sites, antes desenvolvidas com JavaScript e, antes ainda, com Flash.</p>
+				<h1>Vantagens</h1>
+			</section>
+
+			<section class="step" data-x="2000" data-y="-5000" data-rotate-x="300" data-rotate-z="200">
+				<h1>Transitions</h1>
+				<ul>
+					<li>É o método mais simples de se realizar uma animação em CSS.</li>
+					<li>Elementos que tenham essa propriedade, ao terem uma ou mais propriedades animará essa diferença utilizando a curva de aceleração, duração e delay estipulados.</li>
+				</ul>
+				<h2 class="ttl-code">exemplo1.html</h2>
+				<div class="clearfix">
+					<pre class="double">
+						<code style="height:410px;">
+&lt;style&gt;
+	#elemento {
+		width: 10em;
+		height: 10em;
+		position: relative;
+		background: red;
+		opacity: 1;
+		transition: all .5s ease-out;
+		transform: translate(0);
+	}
+
+	#elemento.position {
+		transform: translate(200px, 0);
+	}
+
+	#elemento.color {
+		background: green;
+	}
+
+	#elemento.opacity {
+		opacity: .3;
+	}
+&lt;/style&gt;
+						</code>
+					</pre>
+					<pre class="double">
+						<code style="height:410px;">
+&lt;div id="elemento">&lt;/div&gt;
+&lt;div class="wrapper-butons"&gt;
+	&lt;button id="botao-position"&gt;Posicao&lt;/button&gt;
+	&lt;button id="botao-color"&gt;Cor&lt;/button&gt;
+	&lt;button id="botao-opacity"&gt;Opacidade&lt;/button&gt;
+&lt;/div&gt;
+						</code>
+					</pre>
+				</div>
+			</section>
+
+			<section class="step" data-x="5000" data-y="-8000" data-rotate-x="450" data-rotate-z="300">
+				<h1>Animations</h1>
+				<ul>
+					<li>Fornece um controle maior sobre a animação e o status das propriedades em cada momento da animação.</li>
+				</ul>
+				<h2 class="ttl-code">exemplo2.html</h2>
+				<div class="clearfix">
+					<pre class="double">
+						<code style="height:350px;">
+&lt;style&gt;
+	#elemento {
+		width: 10em;
+		height: 10em;
+		position: relative;
+		background: red;
+		opacity: 1;
+		transform: translate(0);
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-timing-function: ease-out;
+	}
+
+	#elemento.animate {
+		-webkit-animation-name: animacao;
+	}
+&lt;/style&gt;
+						</code>
+					</pre>
+					<pre class="double">
+						<code style="height:350px;">
+&lt;style&gt;
+	@-webkit-keyframes animacao { 
+		33% {
+			background: red;
+			opacity: 1;
+			transform: translate(200px, 0);
+		}
+		66% {
+			opacity: 1;
+			background: green;
+			transform: translate(400px, 0);
+		}
+		100% {
+			background: green;
+			opacity: .3;
+			transform: translate(600px, 0);
+		}
+	}
+&lt;/style&gt;
+						</code>
+					</pre>
+				</div>
+			</section>
+			<section class="step" data-x="8000" data-y="-11000" data-rotate-x="600" data-rotate-z="400">
+				<h1>Steps</h1>
+			</section>
+		</div>
+
+		<script src="js/impress.js"></script>
+		<script src="js/highlight.pack.js"></script>
+		<script>
+			impress().init();
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>
