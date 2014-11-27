@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			body {
+				padding: 4em 10em;
+			}
+
+			a {
+				width: 380px;
+				height: 235px;
+				position: relative;
+			}
+
+			.banner-notebook {
+				width: 276px;
+				height: 154px;
+				display: block;
+				background: url(img/banner-next-notebook.png) no-repeat;
+				position: absolute;
+				left: -36px;
+				bottom: -22px;
+			}
+
+			.banner-notebook .item-anim,
+			.banner-notebook .item-anim img {
+				position: absolute;
+				z-index: 999999;
+				-webkit-transition: all 1.2s ease-out;
+						transition: all 1.2s ease-out;
+				-webkit-transform: translate3d(0, 0, 0);
+					-ms-transform: translate3d(0, 0, 0);
+						transform: translate3d(0, 0, 0);
+			}
+
+			.banner-notebook .item-anim img {
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			.banner-notebook .item-01 {
+				width: 1350px;
+				height: 534px;
+				overflow: hidden;
+				-webkit-transform: translate(1550px, -460px);
+					-ms-transform: translate(1550px, -460px);
+						transform: translate(1550px, -460px);
+			}
+
+			.banner-notebook .item-01.item-animated {
+				-webkit-transform: translate(-580px, -217px) scale(.1274);
+					-ms-transform: translate(-580px, -217px) scale(.1274);
+						transform: translate(-580px, -217px) scale(.1274);
+			}
+
+			.banner-notebook .item-01 img.item-animated {
+				top: -540px;
+				left: -90px;
+			}
+
+			.banner-notebook .item-02 {
+				width: 690px;
+				-webkit-transform: translate(-450px, 1200px);
+					-ms-transform: translate(-450px, 1200px);
+						transform: translate(-450px, 1200px);
+			}
+
+			.banner-notebook .item-02.item-animated {
+				-webkit-transform: translate(-260px, 48px) scale(.0695);
+					-ms-transform: translate(-260px, 48px) scale(.0695);
+						transform: translate(-260px, 48px) scale(.0695);
+			}
+
+			.banner-notebook .item-03 {
+				width: 651px;
+				-webkit-transform: translate(-430px, -800px);
+					-ms-transform: translate(-430px, -800px);
+						transform: translate(-430px, -800px);
+			}
+
+			.banner-notebook .item-03.item-animated {
+				-webkit-transform: translate(-248px, 17px) scale(.0737);
+					-ms-transform: translate(-248px, 17px) scale(.0737);
+						transform: translate(-248px, 17px) scale(.0737);
+			}
+
+			.banner-notebook .item-04 {
+				width: 524px;
+				-webkit-transform: translate(1500px, 800px);
+					-ms-transform: translate(1500px, 800px);
+						transform: translate(1500px, 800px);
+			}
+
+			.banner-notebook .item-04.item-animated {
+				-webkit-transform: translate(-101px, 48px) scale(.0839);
+					-ms-transform: translate(-101px, 48px) scale(.0839);
+						transform: translate(-101px, 48px) scale(.0839);
+			}
+
+			.banner-notebook .item-05 {
+				width: 700px;
+				-webkit-transform: translate(-500px, 1300px);
+					-ms-transform: translate(-500px, 1300px);
+						transform: translate(-500px, 1300px);
+			}
+
+			.banner-notebook .item-05.item-animated {
+				-webkit-transform: translate(-310px, 17px) scale(.0814);
+					-ms-transform: translate(-310px, 17px) scale(.0814);
+						transform: translate(-310px, 17px) scale(.0814);
+			}
+
+			.banner-notebook .item-06 {
+				width: 550px;
+				-webkit-transform: translate(1200px, -510px);
+					-ms-transform: translate(1200px, -510px);
+						transform: translate(1200px, -510px);
+			}
+
+			.banner-notebook .item-06.item-animated {
+				-webkit-transform: translate(-159px, 16px) scale(.0872);
+					-ms-transform: translate(-159px, 16px) scale(.0872);
+						transform: translate(-159px, 16px) scale(.0872);
+			}
+
+			.banner-notebook .item-07 {
+				width: 600px;
+				-webkit-transform: translate(-530px, -900px);
+					-ms-transform: translate(-530px, -900px);
+						transform: translate(-530px, -900px);
+			}
+
+			.banner-notebook .item-07.item-animated {
+				-webkit-transform: translate(-252px, 77px) scale(.09);
+					-ms-transform: translate(-252px, 77px) scale(.09);
+						transform: translate(-252px, 77px) scale(.09);
+			}
+
+			.banner-notebook .item-08 {
+				width: 700px;
+				-webkit-transform: translate(1200px, -360px);
+					-ms-transform: translate(1200px, -360px);
+						transform: translate(1200px, -360px);
+			}
+
+			.banner-notebook .item-08.item-animated {
+				-webkit-transform: translate(-196px, 17px) scale(.0642);
+					-ms-transform: translate(-196px, 17px) scale(.0642);
+						transform: translate(-196px, 17px) scale(.0642);
+			}
+
+			.banner-notebook .item-09 {
+				width: 630px;
+				-webkit-transform: translate(-500px, 1300px);
+					-ms-transform: translate(-500px, 1300px);
+						transform: translate(-500px, 1300px);
+			}
+
+			.banner-notebook .item-09.item-animated {
+				-webkit-transform: translate(-193px, 47px) scale(.0730);
+					-ms-transform: translate(-193px, 47px) scale(.0730);
+						transform: translate(-193px, 47px) scale(.0730);
+			}
+
+			.banner-notebook .item-10 {
+				width: 966px;
+				-webkit-transform: translate(100px, 1300px);
+					-ms-transform: translate(100px, 1300px);
+						transform: translate(100px, 1300px);
+			}
+
+			.banner-notebook .item-10.item-animated {
+				-webkit-transform: translate(-373px, 79px) scale(.0890);
+					-ms-transform: translate(-373px, 79px) scale(.0890);
+						transform: translate(-373px, 79px) scale(.0890);
+			}
+
+			.banner-notebook .item-11 {
+				width: 524px;
+				-webkit-transform: translate(1500px, -800px);
+					-ms-transform: translate(1500px, -800px);
+						transform: translate(1500px, -800px);
+			}
+
+			.banner-notebook .item-11.item-animated {
+				-webkit-transform: translate(-95px, 77px) scale(.0839);
+					-ms-transform: translate(-95px, 77px) scale(.0839);
+						transform: translate(-95px, 77px) scale(.0839);
+			}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:;" id="miolo-nav" tabindex="60" title="Bradesco Next">
+			<img class="carouselTemp" src="img/coverflow-banner-next.png" alt="Bradesco Next"/>
+			<div class="banner-notebook">
+				<div class="item-anim item-01">
+					<img src="img/item-anim-01.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-02">
+					<img src="img/item-anim-02.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-03">
+					<img src="img/item-anim-03.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-04">
+					<img src="img/item-anim-04.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-05">
+					<img src="img/item-anim-05.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-06">
+					<img src="img/item-anim-06.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-07">
+					<img src="img/item-anim-07.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-08">
+					<img src="img/item-anim-08.png" class="img-small" alt="" />
+				</div>
+				<div class="item-anim item-09">
+					<img src="img/item-anim-09.png" alt="" />
+				</div>
+				<div class="item-anim item-10">
+					<img src="img/item-anim-10.png" alt="" />
+				</div>
+				<div class="item-anim item-11">
+					<img src="img/item-anim-11.png" alt="" />
+				</div>
+			</div>
+		</a>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+		$(function(){
+			window.setTimeout(function(){
+				$('.item-anim')
+					.addClass('item-animated')
+			}, 1500);
+		});
+		</script>
+	</body>
+</html>

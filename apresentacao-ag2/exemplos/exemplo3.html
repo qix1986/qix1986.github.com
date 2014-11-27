@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Animações CSS</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				font-size: 10px;
+				padding: 10em;
+			}
+
+			#frango {
+				width: 414px;
+				height: 463px;
+				display: block;
+				background: url(img/lequetreque.png) no-repeat left center;
+				-webkit-animation: breathe 1.2s steps(11) infinite alternate;
+						animation: breathe 1.2s steps(11) infinite alternate;
+			}
+
+			@-webkit-keyframes breathe {
+				to { background-position: -4554px; }
+			}
+
+			@keyframes breathe {
+				to { background-position: -4554px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div id="frango"></div>
+	</body>
+</html>

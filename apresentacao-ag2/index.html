@@ -10,23 +10,21 @@
 	<body>
 		<div id="impress">
 			<section class="step" data-x="-2000" data-y="-3000">
-				<h1>Animações CSS</h1>
-				<pre>
-					<code>
-	&lt;script&gt;
-		var a = document.getElementById("elementId"),
-		    b = a.getBoundingClientRect();
-
-		console.log(b);
-	&lt;/script&gt;
-					</code>
-				</pre>
+				<h1 class="beginning">Animações CSS</h1>
+				<h2><span>Guia nada definitivo sobre o que eu pouco sei delas!</span></h2>
 			</section>
 			
 			<section class="step" data-x="0" data-y="-1000" data-rotate-x="150" data-rotate-z="100">
 				<h1>Origens</h1>
-				<p>Surgiu graças a crescente demanda por animações em sites, antes desenvolvidas com JavaScript e, antes ainda, com Flash.</p>
+				<ul>
+					<li>Surgiu graças a crescente demanda por animações em sites, antes desenvolvidas com JavaScript e, antes ainda, com Flash.</li>
+				</ul>
 				<h1>Vantagens</h1>
+				<ul>
+					<li>Não é dependente de script (menos peso na página).</li>
+					<li>É simples de se utilizar do modo mais simples.</li>
+					<li>Tem opções e funções que com JavaScript teria que se ter muito código para replicar.</li>
+				</ul>
 			</section>
 
 			<section class="step" data-x="2000" data-y="-5000" data-rotate-x="300" data-rotate-z="200">
@@ -35,7 +33,7 @@
 					<li>É o método mais simples de se realizar uma animação em CSS.</li>
 					<li>Elementos que tenham essa propriedade, ao terem uma ou mais propriedades animará essa diferença utilizando a curva de aceleração, duração e delay estipulados.</li>
 				</ul>
-				<h2 class="ttl-code">exemplo1.html</h2>
+				<h2 class="ttl-code"><a href="exemplos/exemplo1.html">exemplo1.html</a></h2>
 				<div class="clearfix">
 					<pre class="double">
 						<code style="height:410px;">
@@ -82,7 +80,7 @@
 				<ul>
 					<li>Fornece um controle maior sobre a animação e o status das propriedades em cada momento da animação.</li>
 				</ul>
-				<h2 class="ttl-code">exemplo2.html</h2>
+				<h2 class="ttl-code"><a href="exemplos/exemplo2.html">exemplo2.html</a></h2>
 				<div class="clearfix">
 					<pre class="double">
 						<code style="height:350px;">
@@ -132,6 +130,97 @@
 			</section>
 			<section class="step" data-x="8000" data-y="-11000" data-rotate-x="600" data-rotate-z="400">
 				<h1>Steps</h1>
+				<ul>
+					<li>Permite que se controle exatamente quantos quadros a animação terá dentro da duração especificada.</li>
+					<li>Indicado para animações fluídas usando sprites.</li>
+				</ul>
+				<h2 class="ttl-code"><a href="exemplos/exemplo3.html">exemplo3.html</a></h2>
+				<pre>
+					<code>
+&lt;style&gt;
+	#frango {
+		width: 414px;
+		height: 463px;
+		display: block;
+		background: url(img/lequetreque.png) no-repeat left center;
+		-webkit-animation: breathe 1.2s steps(11) infinite alternate;
+			animation: breathe 1.2s steps(11) infinite alternate;
+	}
+
+	@-webkit-keyframes breathe {
+		to { background-position: -4554px; }
+	}
+
+	@keyframes breathe {
+		to { background-position: -4554px; }
+	}
+&lt;/style&gt;
+
+&lt;div id="frango"&gt;&lt;/div&gt;
+					</code>
+				</pre>
+			</section>
+			<section class="step" data-x="11000" data-y="-14000" data-rotate-x="750" data-rotate-z="500">
+				<h1>Performance</h1>
+				<ul>
+					<li>Toda animação mexe deve ser pensada e calculada os custos.</li>
+					<li>Sempre que possível anime propriedades que não causem reflow na página (translate ao invés de position, scale ao invés de width e height...).</li>
+					<li>Procure sempre forçar o browser a utilizar a engine 3D para renderizar as propriedades, com isso você ganha o auxílio da GPU na renderização da página.</li>
+					<li>Veja nos arquivos <a href="exemplos/exemplo4.html">exemplo4.html</a> (position, width) e <a href="exemplos/exemplo5.html">exemplo5.html</a> (translate, scale) a diferença de performance nas animações.</li>
+				</ul>
+			</section>
+			<section class="step" data-x="14000" data-y="-17000" data-rotate-x="900" data-rotate-z="600">
+				<h1>Eventos</h1>
+				<ul>
+					<li>Três tipos de eventos são disparados pelas animações em CSS.</li>
+					<li>animationstart, animationiteration, animationend</li>
+					<li>Transitions possuem esses eventos também, com exceção do iteration.</li>
+				</ul>
+				<h2 class="ttl-code"><a href="exemplos/exemplo6.html">exemplo6.html</a></h2>
+				<pre>
+					<code>
+&lt;script&gt;
+	(function(doc, win, undefined){
+		var elemento = doc.getElementById('elemento'),
+			botao    = doc.getElementById('botao');
+
+		botao.addEventListener('click', function(){
+			elemento.classList.toggle('animate');
+		});
+
+		elemento.addEventListener('webkitAnimationStart', function(){
+			console.log("Animação começou!")
+		});
+
+		elemento.addEventListener('webkitAnimationIteration', function(e){
+			console.log("Animação iterou depois de " + e.elapsedTime + " segundos!")
+		});
+
+		elemento.addEventListener('webkitAnimationEnd', function(e){
+			console.log("Animação terminou depois de " + e.elapsedTime + " segundos!")
+		});
+	})(document, window);
+&lt;/script&gt;		
+					</code>
+				</pre>
+			</section>
+			<section class="step" data-x="17000" data-y="-20000" data-rotate-x="1050" data-rotate-z="700">
+				<h1 class="thanks">
+					<span>O</span>
+					<span>B</span>
+					<span>R</span>
+					<span>I</span>
+					<span>G</span>
+					<span>A</span>
+					<span>D</span>
+					<span>O</span>
+					<span>!</span>
+					<span>!</span>
+				</h1>
+				<ul>
+					<li><a href="http://qix1986.github.io/apresentacao-ag2">http://qix1986.github.io/apresentacao-ag2</a></li>
+					<li>git clone https://github.com/qix1986/apresentacao-ag2.git</li>
+				</ul>
 			</section>
 		</div>
 
